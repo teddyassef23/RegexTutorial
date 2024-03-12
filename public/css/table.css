@@ -1,0 +1,35 @@
+.table-content {
+    margin: 3%;
+    /* margin-left: 20%; */
+}
+
+.table-size:hover {
+    background-color: aqua;
+}
+
+.table-container {
+
+
+    border-color: black;
+    border-inline: 2px;
+   
+    width: 56%;
+    justify-content: center;
+    align-content: center;
+    /* background-color: rgb(238, 233, 227); */
+}
+.list-group-item-action {
+    border-style: dotted dashed solid double;
+}
+
+.list-group-item-action:hover {
+    background-color: rgb(133, 149, 143);
+}
+
+.list-group-item-action:active {
+    color: rgb(43, 43, 245);
+}
+
+.list-group-item-action:active :visited {
+    color: green;
+}

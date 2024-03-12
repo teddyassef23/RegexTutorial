@@ -1,0 +1,153 @@
+<h2>Metacharacters</h2>
+
+<h1>Metacharacters in Regex</h1>
+
+    <p>
+        In regular expressions, a metacharacter is a special character that has a specific meaning using which you can build complex patterns that can match a wide range of combinations.
+    </p>
+
+    <div class="table-responsive">
+        <table class="table table-bordered ">
+            <thead>
+                <tr>
+                    <th>
+                        Metacharacter
+                    </th>
+                    <th>
+                        Description
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        .
+                    </td>
+                    <td>
+                        Any single character
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        ^
+                    </td>
+                    <td>
+                        Match the beginning of a line
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        $
+                    </td>
+                    <td>
+                        Match the end of a line
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        a|b
+                    </td>
+                    <td>
+                        Match either a or b
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        \d
+                    </td>
+                    <td>
+                        any digit
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        \D
+                    </td>
+                    <td>
+                        Any non-digit character
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        \w
+                    </td>
+                    <td>
+                        Any word character
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        \W
+                    </td>
+                    <td>
+                        Any non-word character
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        \s
+                    </td>
+                    <td>
+                        matches any whitespace character
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        \S
+                    </td>
+                    <td>
+                        Match any non-whitespace character
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        \b
+                    </td>
+                    <td>
+                        Matches a word boundary
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        \B
+                    </td>
+                    <td>
+                        Match must not occur on a \b boundary.
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        [\b]
+                    </td>
+                    <td>
+                        Backspace character
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        \xYY
+                    </td>
+                    <td>
+                        Match hex character YY
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        \ddd
+                    </td>
+                    <td>
+                        Octal character ddd
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <p>
+        Let&#39;s see the most commonly used metacharacter in the regex pattern and see the result.
+    </p>
+
+
+    <p>
+        The period <code>.</code> metacharacter matches with any single character. The pattern /./g returns the string itself because it matches every character, as shown below.
+    </p>
+
