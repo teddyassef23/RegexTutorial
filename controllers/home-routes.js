@@ -26,10 +26,10 @@ router.get('/EscapeSequences', async (req, res) => {
 
 
 //
-router.get('/Laziness', async (req, res) => {
-  //
-  return res.render('Laziness');
-});
+// router.get('/Laziness', async (req, res) => {
+//   //
+//   return res.render('Laziness');
+// });
 
 
 //
@@ -46,11 +46,11 @@ router.get('/OccurrenceIndicators', async (req, res) => {
 });
 
 
-//
-router.get('/OROperator', async (req, res) => {
-  //
-  return res.render('OROperator');
-});
+// //
+// router.get('/OROperator', async (req, res) => {
+//   //
+//   return res.render('OROperator');
+// });
 
 
 //
@@ -83,4 +83,4 @@ router.get('/SequenceOfCharacters', async (req, res) => {
 
 module.exports = router;
 
-module.exports = router;
+

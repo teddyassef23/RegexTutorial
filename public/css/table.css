@@ -33,3 +33,18 @@
 .list-group-item-action:active :visited {
     color: green;
 }
+
+.table-looks{
+    border-style: solid;
+    border-color: black;
+    border: 1px;
+    
+}
+.table-looks.td{
+    text-decoration: underline;
+}
+
+.example{
+    background-color: antiquewhite;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
