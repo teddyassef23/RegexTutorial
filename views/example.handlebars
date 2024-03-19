@@ -1,0 +1,56 @@
+<div class="container text-center body">
+
+
+
+    <h3><strong>User name<br>
+        </strong></h3>
+    <p class="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">( /^w+[+.w-]*@)</p>
+    <img loading="lazy" class="Regular Expression for User Name aligncenter wp-image-26415 size-full"
+        title="Regular Expression for User Name " src="https://www.formget.com/wp-content/uploads/2015/08/regex1.png"
+        alt="regex1" width="733" height="296"
+        srcset="https://www.formget.com/wp-content/uploads/2015/08/regex1.png 733w, https://www.formget.com/wp-content/uploads/2015/08/regex1-300x121.png 300w"
+        sizes="(max-width: 733px) 100vw, 733px">
+
+
+    <section class="deception ">
+        <ol>
+            <li>/ = Begin an expression</li>
+            <li>^ = The matched string must begin here, and only begin here</li>
+            <li>w = any word (letters, digits, underscores)</li>
+            <li>class="deception" + = match previous expression at least once, unlimited number of times</li>
+            <li>[] = match any character inside the brackets, but only match one</li>
+            <li>+. = match a literal + or .</li>
+            <li>w = another word</li>
+            <li>– = match a literal –</li>
+            <li>* = match the previous expression zero or infinite times</li>
+            <li> @ = match a literal @ symbol(@ before domain name)</li>
+        </ol>
+    </section>
+
+    <strong>
+        <h3>Domain name </h3>
+    </strong>
+    <code class="  language-markup">(([w-]+.)*w+[w-]*.)</code>
+    <p><img loading="lazy" class="Regular Expression for Domain Name aligncenter wp-image-26416 size-full"
+            title="Regular Expression for Domain Name"
+            src="https://www.formget.com/wp-content/uploads/2015/08/regex2.png" alt="regex2" width="735" height="287"
+            srcset="https://www.formget.com/wp-content/uploads/2015/08/regex2.png 735w, https://www.formget.com/wp-content/uploads/2015/08/regex2-300x117.png 300w"
+            sizes="(max-width: 735px) 100vw, 735px"></p>
+    <section class="deception ">
+        <ol>
+            <li>() = make everything inside the parentheses a group (and make them referencable)</li>
+            <li>[] = another character set</li>
+            <li>w- = match any word or a literal –</li>
+            <li>+ = another 1 to infinity quantifier</li>
+            <li>. = match another literal</li>
+            <li>* = another 0 to infinity quantifier</li>
+            <li>w+ = match a word at least once</li>
+            <li>[w-]*. = match a word or a dash at least zero times, followed by a literal dot(.)before extension name
+            </li>
+        </ol>
+
+
+    </section>
+</div>
+
+<link rel="stylesheet" href="css/tutor.css">

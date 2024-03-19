@@ -12,16 +12,16 @@ router.get('/table', async (req, res) => {
 });
 
 //
-router.get('/CharacterClass', async (req, res) => {
+router.get('/example', async (req, res) => {
   //
-  return res.render('CharacterClass');
+  return res.render('example');
 });
 
 
 //
-router.get('/EscapeSequences', async (req, res) => {
+router.get('/reference', async (req, res) => {
   //
-  return res.render('EscapeSequences');
+  return res.render('reference');
 });
 
 
@@ -54,9 +54,9 @@ router.get('/OccurrenceIndicators', async (req, res) => {
 
 
 //
-router.get('/ParenthesizedBackReferences', async (req, res) => {
+router.get('/reference', async (req, res) => {
   //
-  return res.render('ParenthesizedBackReferences');
+  return res.render('reference');
 });
 
 

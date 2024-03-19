@@ -1,85 +1,216 @@
+<div class="container text-center body">
+  <div class="row align-items-start">
 
-<H1 class="table-content"> <u> Table of Contents</u></H1>
-<div class="table-container ">
-  <a href="RegexCharacters" class="list-group-item list-group-item-action " aria-current="true">
-    <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">Characters</h5>
-      <small>3 days ago</small>
-    </div>
-    <p class="mb-1">Some placeholder content in a paragraph.</p>
-    <small>All characters, except those having special meaning in regex, matches themselves. E.g., the regex x matches substring "x"; regex 9 matches "9"; regex = matches "="; and regex @ matches "@"..</small>
-  </a>
+    <tr class="table-primary">
 
-  <a href="EscapeSequences" class="list-group-item list-group-item-action">
-    <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">Escape Sequences</h5>
-      <small class="text-body-secondary">3 days ago</small>
-    </div>
-    <p class="mb-1">Escape sequences are typically used to specify actions.</p>
-    <small class="text-body-secondary">Character combinations consisting of a backslash (\) followed by a letter or by a combination of digits are called "escape sequences." To represent a newline character, single quotation mark, or certain other characters in a character constant, you must use escape sequences.</small>
-  </a>
+      <div class="col border-5 rounded-top-4 border border-success p-2 mb-2">
 
-  <a href="SequenceOfCharacters" class="list-group-item list-group-item-action">
-    <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">A Sequence of Characters (or String) </h5>
-      <small class="text-body-secondary">3 days ago</small>
-    </div>
-    <p class="mb-1">a sequence of characters from the source character set enclosed in double quotation marks ( " " ). </p>
-    <small class="text-body-secondary">Strings can be matched via combining a sequence of characters (called sub-expressions).</small>
-  </a>
+        <h3 class="contents">Table of Contents </h3>
+        <div class="align-items-start">
 
-  {{!-- <a href="OROperator" class="list-group-item list-group-item-action">
-    <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">OR Operator (|)</h5>
-      <small class="text-body-secondary">3 days ago</small>
-    </div>
-    <p class="mb-1">Alternatives match one of a choice of regular expressions </p>
-    <small class="text-body-secondary">the regex four|4 accepts strings "four" or "4".</small>
-  </a> --}}
+          <li> <a href="#why-validate-email-addresses">Why validate email addresses?</a></li>
+          <li> <a href="#what-is-a-regular-expression">What is a regular expression?</a></li>
+          <li> <a href="#the-anatomy-of-an-email-address">The anatomy of an email address</a></li>
+          <li> <a href="#building-a-regular-expression-for-email-validation">Building a regular expression for
+              email validation</a>
+          </li>
+          <li><a href="#using-the-regular-expression-in-your-code">Using the regular expression in your
+              code</a></li>
+          <li><a href="#common-errors-and-how-to-handle-them">Common Errors and How to Handle Them</a></li>
+          <li><a href="#conclusion">Conclusion</a></li>
+        </div>
 
-  <a href="CharacterClass" class="list-group-item list-group-item-action">
-    <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">Character class (or Bracket List)</h5>
-      <small class="text-body-secondary">3 days ago</small>
-    </div>
-    <p class="mb-1">Within a bracket expression, a range expression consists of two characters separated by a hyphen.</p>
-    <small class="text-body-secondary">A bracket expression is a list of characters enclosed by ‘[’ and ‘]’. It matches any single character in that list</small>
-  </a>
+    </tr>
+  </div>
+  <div class="col">
 
-  <a href="OccurrenceIndicators" class="list-group-item list-group-item-action">
-    <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">Occurrence Indicators (or Repetition Operators)</h5>
-      <small class="text-body-secondary">3 days ago</small>
-    </div>
-    <p class="mb-1">In this case, [0-9]+ matches one or more digits</p>
-    <small class="text-body-secondary">indicates one or more occurrences ( 1+ ) of the previous sub-expression.</small>
-  </a>
 
-  <a href="Metacharacters" class="list-group-item list-group-item-action">
-    <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">Metacharacters</h5>
-      <small class="text-body-secondary">3 days ago</small>
-    </div>
-    <p class="mb-1">matches a character.</p>
-    <small class="text-body-secondary">a character that has a special meaning to a computer program.</small>
-  </a>
 
-  <a href="ParenthesizedBackReferences" class="list-group-item list-group-item-action">
-    <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">Parenthesized Back References</h5>
-      <small class="text-body-secondary">3 days ago</small>
-    </div>
-    <p class="mb-1">Use parentheses ( ) to create a back reference.</p>
-    <small class="text-body-secondary">It is  like \1 or \2 matches the string matched by a previous parenthesized expression.</small>
-  </a>
+    <section class="body border-5 rounded-top-4 border border-success p-2 mb-2">
+      <H1>validate an email address using a regular expression</H1>
+      <p>In this blog, we will learn about a fundamental task encountered by software engineers: validating user
+        input.
+        Specifically, we will delve into the crucial process of validating email addresses, a vital step in ensuring
+        the
+        security and user-friendliness of your applications. The post will explore the use of regular expressions for
+        email
+        address validation, providing insights to help you develop software that is both robust and secure.</p>
+      <p>****************************************************************************************************</p>
 
-  {{!-- <a href="Laziness" class="list-group-item list-group-item-action">
-    <div class="d-flex w-100 justify-content-between">
-      <h5 class="mb-1">Laziness (Curb Greediness for Repetition Operators)</h5>
-      <small class="text-body-secondary">3 days ago</small>
-    </div>
-    <p class="mb-1">Some placeholder content in a paragraph.</p>
-    <small class="text-body-secondary">And some muted small print.</small>
-  </a>
-</div> --}}
-<link rel="stylesheet" href="css/table.css">
+      <h2 id="why-validate-email-addresses">Why validate email addresses?<a aria-hidden="true"
+          href="#why-validate-email-addresses" style="visibility: hidden;"> <svg xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor" width="24" height="24" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"></path>
+            <path
+              d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z">
+            </path>
+          </svg></a></h2>
+      <p>Before we dive into the specifics of email validation, let’s first discuss why it’s important to validate
+        email
+        addresses in the first place. First and foremost, email validation helps to ensure that the email address
+        entered by
+        the user is formatted correctly. This can help prevent typos and other mistakes that could lead to delivery
+        failures
+        or other issues down the line.</p>
+      <p>Additionally, email validation can help prevent malicious attacks such as email spoofing or phishing. By
+        validating
+        that the email address entered by the user is legitimate, you can help prevent attackers from sending fake
+        emails that
+        appear to come from legitimate sources.</p>
+
+      <h2 id="what-is-a-regular-expression">What is a regular expression?<a aria-hidden="true"
+          href="#what-is-a-regular-expression" style="visibility: hidden;"> <svg xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor" width="24" height="24" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"></path>
+            <path
+              d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z">
+            </path>
+          </svg></a></h2>
+      <p>A regular expression, also known as a regex, is a pattern that describes a set of strings. Regular
+        expressions are
+        commonly used in programming to search for, match, and manipulate text.</p>
+      <p> In the context of email validation, a regular expression can be used to check whether an email address is
+        properly
+        formatted. By defining a pattern that matches valid email addresses, we can use a regular expression to
+        quickly and
+        efficiently validate user input.</p>
+
+      <h2 id="the-anatomy-of-an-email-address">The anatomy of an email address<a aria-hidden="true"
+          href="#the-anatomy-of-an-email-address" style="visibility: hidden;"> <svg xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor" width="24" height="24" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"></path>
+            <path
+              d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z">
+            </path>
+          </svg></a></h2>
+      <p>Before we can create a regular expression to validate email addresses, it’s important to understand the basic
+        structure of an email address. At a high level, an email address consists of two parts: the local part and the
+        domain
+        part.</p>
+      <p> The local part is the portion of the email address that comes before the “@” symbol. This part can contain a
+        variety
+        of characters, including letters, numbers, and special characters such as ".", "-", and "_".</p>
+      <p> The domain part, on the other hand, is the portion of the email address that comes after the "@" symbol.
+        This part
+        typically consists of a domain name, which can contain letters, numbers, and hyphens.</p>
+      <h2 id="building-a-regular-expression-for-email-validation">Building a regular expression for email validation<a
+          aria-hidden="true" href="#building-a-regular-expression-for-email-validation" style="visibility: hidden;">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="24" height="24" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"></path>
+            <path
+              d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z">
+            </path>
+          </svg></a></h2>
+      <p>Now that we understand the basic structure of an email address, we can begin to build a regular expression to
+        validate email addresses. There are many different regular expressions that can be used for email validation,
+        but
+        we’ll focus on one that is commonly used and fairly robust.</p>
+      <p>Here’s the regular expression we’ll be using:</p>
+      <p style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+        /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/</p>
+      <p>Let’s break down this regular expression piece by piece:</p>
+      <p>This regular expression matches email addresses that are properly formatted according to the rules we
+        discussed
+        earlier. Specifically, it matches email addresses that have a valid local part and a valid domain part,
+        separated by
+        an <code>"@"</code> symbol.</p>
+
+      <ul>
+        <li><code>^</code> - The beginning of the string.</li>
+        <li><code>(</code> - Start of a capturing group.</li>
+        <li><code>[a-zA-Z0-9._%-]+</code> - Matches one or more of the following characters: letters (both uppercase
+          and
+          lowercase), numbers, periods, underscores, percent signs, and hyphens.</li>
+        <li><code>@</code> - Matches the “@” symbol.</li>
+        <li><code>[a-zA-Z0-9.-]+</code> - Matches one or more of the following characters: letters (both uppercase and
+          lowercase), numbers, periods, and hyphens.</li>
+        <li><code>\.</code> - Matches a literal period character.</li>
+        <li><code>[a-zA-Z]{2,}</code> - Matches two or more letters (both uppercase and lowercase).</li>
+        <li><code>)</code> - End of the capturing group.</li>
+        <li><code>$</code> - The end of the string.</li>
+      </ul>
+      <p>This regular expression matches email addresses that are properly formatted according to the rules we
+        discussed
+        earlier. Specifically, it matches email addresses that have a valid local part and a valid domain part,
+        separated by
+        an <code>"@"</code> symbol.</p>
+
+      <h2 id="using-the-regular-expression-in-your-code">Using the regular expression in your code</h2>
+      <p>Here’s an example of how to use the regular expression in Python:</p>
+      <p>Here’s an example of how to use the regular expression in Python:</p>
+      <div class="highlight">
+        <pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#204a87;font-weight:700">import</span> <span style="color:#000">re</span>
+
+<span style="color:#000">email_pattern</span> <span style="color:#ce5c00;font-weight:700">=</span> <span style="color:#000">re</span><span style="color:#ce5c00;font-weight:700">.</span><span style="color:#000">compile</span><span style="color:#000;font-weight:700">(</span><span style="color:#4e9a06">r</span><span style="color:#4e9a06">'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'</span><span style="color:#000;font-weight:700">)</span>
+<span style="color:#204a87;font-weight:700">def</span> <span style="color:#000">validate_email</span><span style="color:#000;font-weight:700">(</span><span style="color:#000">email</span><span style="color:#000;font-weight:700">):</span>
+    <span style="color:#204a87;font-weight:700">if</span> <span style="color:#000">email_pattern</span><span style="color:#ce5c00;font-weight:700">.</span><span style="color:#000">match</span><span style="color:#000;font-weight:700">(</span><span style="color:#000">email</span><span style="color:#000;font-weight:700">):</span>
+        <span style="color:#204a87;font-weight:700">print</span><span style="color:#000;font-weight:700">(</span><span style="color:#000">f</span><span style="color:#4e9a06">"{email} is a valid email address."</span><span style="color:#000;font-weight:700">)</span>
+    <span style="color:#204a87;font-weight:700">else</span><span style="color:#000;font-weight:700">:</span>
+        <span style="color:#204a87;font-weight:700">print</span><span style="color:#000;font-weight:700">(</span><span style="color:#000">f</span><span style="color:#4e9a06">"{email} is not a valid email address."</span><span style="color:#000;font-weight:700">)</span>
+
+<span style="color:#000">validate_email</span><span style="color:#000;font-weight:700">(</span><span style="color:#4e9a06">"john.doe@saturncloud.io"</span><span style="color:#000;font-weight:700">)</span>  <span style="color:#8f5902;font-style:italic"># Valid email address</span>
+<span style="color:#000">validate_email</span><span style="color:#000;font-weight:700">(</span><span style="color:#4e9a06">"invalid_email"</span><span style="color:#000;font-weight:700">)</span>          <span style="color:#8f5902;font-style:italic"># Invalid email address</span>
+</code></pre>
+      </div>
+      <p>Output:</p>
+      <pre><code>john.doe@saturncloud.io is a valid email address.
+invalid_email is not a valid email address.
+</code></pre>
+      <p>In this example, we define a regular expression for email validation and wrap it in a function called
+        <code>validate_email</code>. This function takes an email address as an argument and returns a boolean value
+        indicating whether the email address is valid according to the regular expression.
+      </p>
+      <p>We then call the <code>validate_email</code> function with an example email address and log the result to the
+        console.</p>
+
+
+      <h2 id="common-errors-and-how-to-handle-them">Common Errors and How to Handle Them: </h2>
+      <ul>
+        <li>
+          <p>False Negatives: If the regex pattern rejects a valid email, ensure that the pattern is up-to-date with
+            the
+            latest email standards.</p>
+        </li>
+        <li>
+          <p>False Positives: If the regex pattern accepts an invalid email, review and adjust the pattern to enhance
+            accuracy.</p>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <p>False Negatives: If the regex pattern rejects a valid email, ensure that the pattern is up-to-date with
+            the
+            latest email standards.</p>
+        </li>
+        <li>
+          <p>False Positives: If the regex pattern accepts an invalid email, review and adjust the pattern to enhance
+            accuracy.</p>
+        </li>
+      </ul>
+      <p>Validating email addresses is a critical step in ensuring the security and user-friendliness of your
+        applications.
+        This comprehensive guide has explored the use of regular expressions for efficient email address validation,
+        covering
+        the anatomy of an email address, building a robust regex pattern, and implementing it in your code. Armed with
+        this
+        knowledge, you can develop software that effectively validates user input, enhancing the overall security of
+        your
+        applications.</p>
+
+      <h2 id="conclusion">Conclusion</h2>
+      <p>Validating email addresses is a critical step in ensuring the security and user-friendliness of your
+        applications. This comprehensive guide has explored the use of regular expressions for efficient email address
+        validation, covering the anatomy of an email address, building a robust regex pattern, and implementing it in
+        your code. Armed with this knowledge, you can develop software that effectively validates user input,
+        enhancing the overall security of your applications.</p>
+      <link rel="stylesheet" href="css/tutor.css">
+
+    </section>
+
+
+  </div>
+  <div class="col">
+    One of three columns
+  </div>
+</div>
+</div>

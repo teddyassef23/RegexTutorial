@@ -1,3 +1,8 @@
+
+.banner{
+	width: 100%;
+	background-color: black;
+}
 * {
 	box-sizing: border-box;
 }
@@ -32,11 +37,12 @@ nav,
 }
 
 nav {
+	background-color: black;
 	border-radius: 6px;
 	background-image: linear-gradient(
-		rgb(100, 96, 96) 13%,
-		rgb(30, 30, 30) 40%,
-		#0c0d11 86%
+		rgb(123, 120, 157) 13%,
+		rgb(48, 64, 144) 40%,
+		#1335bb 86%
 	);
 	color: rgba(255, 255, 255, 0.6);
 	text-shadow: 0 -2px 0 black;
